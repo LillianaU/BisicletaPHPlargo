@@ -38,6 +38,7 @@ try {
 
             session_regenerate_id(true);
 
+            $_SESSION['ultima_actividad'] = time();
             $_SESSION['usuario'] = [
                 'id'          => (int)$fila['id_usuario'],
                 'nombre'      => $fila['nombre'],
@@ -49,7 +50,7 @@ try {
                 'alquileres'  => (int)$fila['cantidad_alquileres'],
             ];
 
-            json_salida(true, ['usuario' => $_SESSION['usuario']], 'Bienvenido, ' . $fila['nombre']);
+            json_salida(true, ['usuario' => $_SESSION['usuario'], 'csrf' => csrf_token()], 'Bienvenido, ' . $fila['nombre']);
             break;
 
         case 'logout':
@@ -65,7 +66,8 @@ try {
             if (empty($_SESSION['usuario'])) {
                 json_salida(false, null, 'Sin sesión activa', 401);
             }
-            json_salida(true, ['usuario' => $_SESSION['usuario']]);
+            verificar_sesion_activa();
+            json_salida(true, ['usuario' => $_SESSION['usuario'], 'csrf' => csrf_token()]);
             break;
 
         default:

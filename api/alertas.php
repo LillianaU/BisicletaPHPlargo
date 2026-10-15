@@ -23,6 +23,7 @@ try {
             break;
 
         case 'atender':
+            requerir_csrf();
             requerir_roles(['ADMIN', 'TECNICO']);
             $id = (int)json_entrada('id_alerta', 0);
 
@@ -33,6 +34,7 @@ try {
             break;
 
         case 'cerrar':
+            requerir_csrf();
             requerir_roles(['ADMIN', 'TECNICO']);
             $id = (int)json_entrada('id_alerta', 0);
 

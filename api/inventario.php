@@ -20,6 +20,7 @@ try {
             break;
 
         case 'crear':
+            requerir_csrf();
             requerir_roles(['ADMIN', 'TECNICO']);
 
             $nombre    = trim((string)json_entrada('nombre_rep', ''));
@@ -44,6 +45,7 @@ try {
             break;
 
         case 'actualizar':
+            requerir_csrf();
             requerir_roles(['ADMIN', 'TECNICO']);
             $id        = (int)json_entrada('id_repuesto', 0);
             $cantidad  = (int)json_entrada('cantidad_disponible', 0);

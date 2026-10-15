@@ -20,6 +20,7 @@ try {
             break;
 
         case 'crear':
+            requerir_csrf();
             $tipo = strtoupper((string)json_entrada('tipo', ''));
             $tipos = ['EFECTIVO', 'TARJETA_CREDITO', 'TARJETA_DEBITO', 'PSE', 'NEQUI', 'DAVIPLATA', 'OTRO'];
 
@@ -34,6 +35,7 @@ try {
             break;
 
         case 'alternar':
+            requerir_csrf();
             $id = (int)json_entrada('id_metodo', 0);
 
             $stmt = $pdo->prepare("UPDATE metodos_pago SET activo = NOT activo WHERE id_metodo = ? AND id_usuario = ?");

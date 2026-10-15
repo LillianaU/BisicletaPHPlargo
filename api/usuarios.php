@@ -29,6 +29,7 @@ try {
             break;
 
         case 'crear':
+            requerir_csrf();
             requerir_roles(['ADMIN']);
 
             $nombre   = trim((string)json_entrada('nombre', ''));
@@ -57,6 +58,7 @@ try {
             break;
 
         case 'cambiar_estado':
+            requerir_csrf();
             requerir_roles(['ADMIN']);
             $id     = (int)json_entrada('id_usuario', 0);
             $estado = strtoupper((string)json_entrada('estado', ''));
@@ -77,6 +79,7 @@ try {
             break;
 
         case 'perfil_guardar':
+            requerir_csrf();
             $usuario = requerir_login();
             $telefono = trim((string)json_entrada('telefono', ''));
             $passwordActual = (string)json_entrada('password_actual', '');

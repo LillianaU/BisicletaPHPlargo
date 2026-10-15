@@ -48,6 +48,7 @@ try {
             break;
 
         case 'crear':
+            requerir_csrf();
             $usuario = requerir_roles(['ADMIN', 'OPERADOR', 'CLIENTE']);
 
             $idUsuario  = $usuario['rol'] === 'CLIENTE' ? $usuario['id'] : (int)json_entrada('id_usuario', 0);
@@ -69,6 +70,7 @@ try {
             break;
 
         case 'actualizar':
+            requerir_csrf();
             $usuario = requerir_login();
             $id      = (int)json_entrada('id_alquiler', 0);
 
@@ -100,6 +102,7 @@ try {
             break;
 
         case 'finalizar':
+            requerir_csrf();
             $usuario = requerir_login();
             $id      = (int)json_entrada('id_alquiler', 0);
 
@@ -134,6 +137,7 @@ try {
             break;
 
         case 'anular':
+            requerir_csrf();
             $usuario = requerir_login();
             $id      = (int)json_entrada('id_alquiler', 0);
 

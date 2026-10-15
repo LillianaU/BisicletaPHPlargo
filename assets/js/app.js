@@ -8,6 +8,7 @@
 let USUARIO = null;
 let VISTA = 'dashboard';
 let TIPO_GRAFICO = 'SEMANA';
+let CSRF = null;
 
 /* ------------------------- HELPERS ------------------------- */
 
@@ -16,13 +17,21 @@ async function api(archivo, params = {}, metodo = 'GET', datos = null) {
     const opciones = { method: metodo, headers: {} };
     if (metodo !== 'GET') {
         opciones.headers['Content-Type'] = 'application/json';
-        opciones.body = JSON.stringify(datos || {});
+        opciones.body = JSON.stringify({ _csrf: CSRF, ...(datos || {}) });
     }
     const resp = await fetch('api/' + archivo + qs, opciones);
     let json;
     try { json = await resp.json(); }
     catch { json = { ok: false, mensaje: 'Respuesta inválida del servidor' }; }
-    if (resp.status === 401 && USUARIO) { USUARIO = null; mostrarLogin(); }
+    if (json.datos && json.datos.csrf) CSRF = json.datos.csrf;
+    if (resp.status === 401 && USUARIO) {
+        const expirada = (json.mensaje || '').includes('expirada');
+        USUARIO = null;
+        if (expirada) {
+            Swal.fire({ icon: 'info', title: 'Sesión expirada', text: 'Por seguridad tu sesión se cerró tras 30 minutos de inactividad.' });
+        }
+        mostrarLogin();
+    }
     return json;
 }
 

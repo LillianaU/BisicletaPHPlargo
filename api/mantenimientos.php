@@ -32,6 +32,7 @@ try {
             break;
 
         case 'crear':
+            requerir_csrf();
             $usuario = requerir_roles(['ADMIN', 'TECNICO']);
 
             $idBici       = (int)json_entrada('id_bicicleta', 0);
@@ -80,6 +81,7 @@ try {
             break;
 
         case 'agregar_repuesto':
+            requerir_csrf();
             requerir_roles(['ADMIN', 'TECNICO']);
 
             $idManten  = (int)json_entrada('id_manten', 0);
@@ -104,6 +106,7 @@ try {
             break;
 
         case 'finalizar':
+            requerir_csrf();
             requerir_roles(['ADMIN', 'TECNICO']);
             $id = (int)json_entrada('id_manten', 0);
 
@@ -122,6 +125,7 @@ try {
             break;
 
         case 'cancelar':
+            requerir_csrf();
             requerir_roles(['ADMIN', 'TECNICO']);
             $id = (int)json_entrada('id_manten', 0);
 
