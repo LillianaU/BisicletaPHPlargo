@@ -52,7 +52,7 @@ El frontend nunca accede a la base de datos: toda comunicación es `fetch` + JSO
 | **Bootstrap Icons (CDN)** | Set de iconos SVG | Iconografía de menús, botones y tarjetas |
 | **SweetAlert2 (CDN)** | Librería de diálogos | Todos los modales (formularios CRUD) y alertas/toasts |
 | **HTML5 Canvas + JS vanilla** | Lienzo de dibujo nativo | Gráficos estadísticos propios (barras y dona, tooltip y animación, sin librerías de gráficos) |
-| **SVG embebido** | Gráficos vectoriales | Escena decorativa del login (parque con bicicletas, efecto relieve con filtros `feDropShadow`), paleta del sistema |
+| **SVG embebido** | Gráficos vectoriales | Fondo del login: parque con bicicleta eléctrica **en tránsito** animada (SMIL), efecto relieve con `feDropShadow`, paleta del sistema |
 | **CSS3 personalizado** | Hoja de estilos propia | Paleta verde caro 55 % / menta 30 % / oliva 15 % / dorado 10 %, relieve, responsivo |
 | **HTML5 semántico** | Estructura de la SPA | Shell única (`index.php`) que carga vistas por JS |
 | **Sesiones PHP + `random_bytes`** | Mecanismos nativos de seguridad | Autenticación, vencimiento por inactividad y token CSRF |
@@ -307,6 +307,6 @@ Bisicleta/
 └── assets/
     ├── css/estilos.css            Paleta 55/30/15/10, relieve, responsivo
     └── js/
-        ├── app.js                 SPA (vistas, modales SweetAlert2, CSRF, escena SVG del login)
+        ├── app.js                 SPA (vistas, modales SweetAlert2, CSRF, fondo SVG animado del login)
         └── graficos.js            Motor Canvas (barras + dona, tooltip, leyenda)
 ```
