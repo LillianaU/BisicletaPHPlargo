@@ -2,6 +2,8 @@
 
 Implementación del SDD (Software Design Description) con **PHP nativo**, **MySQL/MariaDB**, **Bootstrap 5**, **HTML5 Canvas** y **SweetAlert2**.
 
+> 📘 **¿Quieres aprender a construirlo?** Consulta el [TUTORIAL.md](TUTORIAL.md): guía paso a paso con diagramas de arquitectura, patrones, clases, secuencia, estados y flujos.
+
 ---
 
 ## ¿En qué consiste el sistema?
@@ -289,6 +291,7 @@ Funcionan **con internet**. Para uso 100 % offline, descargar los 3 archivos y a
 Bisicleta/
 ├── Bisicleta.sql                  Script completo de BD (importar con utf8mb4)
 ├── creacion_usuario_prueba.php    Alta de usuarios de prueba (script independiente)
+├── TUTORIAL.md                    Tutorial paso a paso con diagramas (Mermaid)
 ├── index.php                      Shell de la SPA
 ├── config/
 │   ├── config.php                 Credenciales BD (Laragon: root sin clave)
