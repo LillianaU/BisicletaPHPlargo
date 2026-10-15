@@ -106,6 +106,103 @@ function mostrarLogin() {
                 </div>
             </div>
         </div>
+
+        <div class="login-escena" aria-hidden="true">
+        <svg viewBox="0 0 960 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Parque con bicicletas eléctricas">
+            <defs>
+                <linearGradient id="cielo" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#e9f6f1"/><stop offset=".65" stop-color="#bfe6d8"/><stop offset="1" stop-color="#9dd8c2"/>
+                </linearGradient>
+                <radialGradient id="sol" cx=".5" cy=".5" r=".5">
+                    <stop offset="0" stop-color="#e6c964"/><stop offset=".55" stop-color="#d4af37" stop-opacity=".85"/><stop offset="1" stop-color="#d4af37" stop-opacity="0"/>
+                </radialGradient>
+                <linearGradient id="arbol" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#94a55a"/><stop offset="1" stop-color="#14523d"/>
+                </linearGradient>
+                <linearGradient id="marco" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#e6c964"/><stop offset="1" stop-color="#8a6d14"/>
+                </linearGradient>
+                <linearGradient id="camino" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#d6efe3"/><stop offset="1" stop-color="#9dd8c2"/>
+                </linearGradient>
+                <filter id="relieve" x="-30%" y="-30%" width="160%" height="160%">
+                    <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#0f3d2e" flood-opacity=".45"/>
+                </filter>
+                <filter id="relieveSuave" x="-40%" y="-40%" width="180%" height="180%">
+                    <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0f3d2e" flood-opacity=".35"/>
+                </filter>
+                <clipPath id="redondeo"><rect width="960" height="280" rx="20"/></clipPath>
+                <g id="pino">
+                    <rect x="-4" y="44" width="8" height="24" fill="#14523d"/>
+                    <path d="M0 -16 L26 16 H-26 Z" fill="url(#arbol)"/>
+                    <path d="M0 2 L30 36 H-30 Z" fill="url(#arbol)"/>
+                    <path d="M0 22 L34 56 H-34 Z" fill="url(#arbol)"/>
+                </g>
+                <g id="iconoBici" fill="none" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="9" cy="24" r="7"/>
+                    <circle cx="33" cy="24" r="7"/>
+                    <path d="M9 24 L18 10 L29 10 L33 24 M18 10 L21 24 H9 M27 9 h6 M16 7 h5"/>
+                </g>
+                <g id="rueda">
+                    <circle r="30" fill="none" stroke="#0f3d2e" stroke-width="7"/>
+                    <circle r="30" fill="none" stroke="#bfe6d8" stroke-width="1.4" opacity=".8"/>
+                    <g stroke="#0f3d2e" stroke-width="1.5" opacity=".75">
+                        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="7s" repeatCount="indefinite"/>
+                        <line x1="-27" y1="0" x2="27" y2="0"/>
+                        <line x1="0" y1="-27" x2="0" y2="27"/>
+                        <line x1="-19" y1="-19" x2="19" y2="19"/>
+                        <line x1="-19" y1="19" x2="19" y2="-19"/>
+                    </g>
+                    <circle r="4.5" fill="#d4af37"/>
+                </g>
+            </defs>
+
+            <g clip-path="url(#redondeo)">
+                <rect width="960" height="280" fill="url(#cielo)"/>
+                <circle cx="820" cy="62" r="52" fill="url(#sol)"/>
+                <circle cx="820" cy="62" r="26" fill="#d4af37" filter="url(#relieveSuave)"/>
+                <path d="M300 74 q7 -9 14 0 q7 -9 14 0" fill="none" stroke="#0f3d2e" stroke-width="2.4" opacity=".45" stroke-linecap="round"/>
+                <path d="M345 56 q6 -8 12 0 q6 -8 12 0" fill="none" stroke="#0f3d2e" stroke-width="2.2" opacity=".4" stroke-linecap="round"/>
+
+                <path d="M0 196 Q240 118 480 186 T960 172 L960 280 H0 Z" fill="#14523d" opacity=".45"/>
+                <path d="M0 226 Q320 168 640 220 T960 206 L960 280 H0 Z" fill="#1b6b4f" opacity=".5"/>
+
+                <use href="#pino" x="0" y="0" transform="translate(84,150) scale(1.15)" filter="url(#relieveSuave)"/>
+                <use href="#pino" x="0" y="0" transform="translate(178,180) scale(0.8)" filter="url(#relieveSuave)"/>
+                <use href="#pino" x="0" y="0" transform="translate(886,162) scale(1.05)" filter="url(#relieveSuave)"/>
+                <use href="#pino" x="0" y="0" transform="translate(778,192) scale(0.7)" filter="url(#relieveSuave)"/>
+
+                <g filter="url(#relieveSuave)">
+                    <rect x="606" y="118" width="6" height="84" rx="3" fill="#14523d"/>
+                    <circle cx="609" cy="112" r="14" fill="#d4af37" opacity=".28"/>
+                    <circle cx="609" cy="112" r="8" fill="#d4af37"/>
+                </g>
+                <path d="M609 122 L584 214 H634 Z" fill="#d4af37" opacity=".14"/>
+
+                <path d="M-10 258 C240 234 430 246 530 240 C650 232 830 246 970 234 L970 280 H-10 Z" fill="url(#camino)"/>
+                <path d="M-10 262 C260 244 460 252 560 248 C690 242 850 254 970 244" fill="none" stroke="#d4af37" stroke-width="3" stroke-dasharray="16 12" opacity=".85"/>
+
+                <ellipse cx="46" cy="264" rx="64" ry="16" fill="#7a8b3f" opacity=".85" filter="url(#relieveSuave)"/>
+                <ellipse cx="916" cy="266" rx="72" ry="17" fill="#7a8b3f" opacity=".85" filter="url(#relieveSuave)"/>
+
+                <g transform="translate(402,114) scale(1.5)" filter="url(#relieve)">
+                    <use href="#rueda" transform="translate(0,52)"/>
+                    <use href="#rueda" transform="translate(110,52)"/>
+                    <path d="M0 52 L36 12 M0 52 L46 52 L36 12 M36 12 L98 12 M46 52 L98 12 M98 12 L110 52"
+                          fill="none" stroke="url(#marco)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M27 8 h20" stroke="#0f3d2e" stroke-width="6" stroke-linecap="round"/>
+                    <path d="M98 12 L102 2 M94 0 h17" stroke="#0f3d2e" stroke-width="5" stroke-linecap="round"/>
+                    <circle cx="46" cy="52" r="6.5" fill="#0f3d2e"/>
+                    <line x1="46" y1="52" x2="58" y2="63" stroke="#0f3d2e" stroke-width="4" stroke-linecap="round"/>
+                    <path d="M64 2 L55 18 h9 l-7 15" fill="none" stroke="#d4af37" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+
+                <use href="#iconoBici" transform="translate(238,204) scale(1.05)" stroke="#14523d" filter="url(#relieveSuave)"/>
+                <use href="#iconoBici" transform="translate(636,208) scale(0.95)" stroke="#7a8b3f" filter="url(#relieveSuave)"/>
+                <use href="#iconoBici" transform="translate(812,212) scale(0.85)" stroke="#8a6d14" filter="url(#relieveSuave)"/>
+            </g>
+        </svg>
+        </div>
     </div>`;
 
     $('#formLogin').addEventListener('submit', async (ev) => {
